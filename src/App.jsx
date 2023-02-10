@@ -4,8 +4,6 @@ import ContactForm from './components/ContactForm';
 import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
 
-// import contacts from 'initialContacts';
-
 const App = () => {
   const [contacts, setContacts] = useState(() => {
     const contacts = JSON.parse(window.localStorage.getItem('contacts'));

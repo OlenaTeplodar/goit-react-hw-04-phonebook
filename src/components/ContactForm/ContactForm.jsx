@@ -2,12 +2,8 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 import initialState from './initialState';
-// import useForm from '../../shared/hooks/useForm';
 
 const ContactForm = ({ onSubmit }) => {
-  // const { state, handleChange, handleSubmit }  = useForm({
-  //   initialState, onSubmit
-  // });
   const [state, setState] = useState({ ...initialState });
 
   const { name, number } = state;
@@ -23,17 +19,7 @@ const ContactForm = ({ onSubmit }) => {
     evt.preventDefault();
     onSubmit({ name, number });
     setState({ ...initialState });
-    // const data = onSubmit({ ...this.state });
-    // // console.log(data);
-    // // this.reset();
-    // if (data) {
-    //   this.reset();
-    // }
   };
-
-  // reset() {
-  //   this.setState({ name: '', number: '' });
-  // }
 
   return (
     <div className={css.wrapper}>
