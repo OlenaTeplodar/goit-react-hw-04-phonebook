@@ -18,7 +18,7 @@ const App = () => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const isDublication = (name, number) => {
+  const isDublication = ({ name, number }) => {
     const nameNormalized = name.toLowerCase();
     const numberNormalized = number.trim();
     const duble = contacts.find(({ name, number }) => {
@@ -76,7 +76,10 @@ const App = () => {
       <h2>Contacts</h2>
       <Filter handleChange={handleFilter} value={filter} />
       {isContacts && (
-        <ContactList contacts={contacts} removeContact={removeContact} />
+        <ContactList
+          contacts={filteredContacts}
+          removeContact={removeContact}
+        />
       )}
       {!isContacts && <p>No contacts in list</p>}
     </div>
